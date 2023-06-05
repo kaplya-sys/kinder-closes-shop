@@ -1,0 +1,38 @@
+.adventures {
+	margin-bottom: 131px;
+	padding: 0 73px;
+}
+
+.adventures__title {
+	margin: 0;
+	margin-bottom: 35px;
+}
+
+.adventures__list {
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.adventures__item {
+	display: flex;
+	flex-direction: column;
+}
+
+.adventures__subtitle {
+	width: 75%;
+	margin: 0;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+	color: #120044;
+	order: 1;
+}
+
+.adventures__icon {
+	display: block;
+	margin-bottom: 15px;
+}

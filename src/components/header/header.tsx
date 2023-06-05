@@ -1,9 +1,13 @@
+"use client"
 import Link from 'next/link'
 import Logo from '../logo/logo'
 import Image from 'next/image'
 import './header.scss'
+import {useState} from 'react'
 
 export default function Header(): JSX.Element {
+  const [dropdownToggle, setDropdownToggle] = useState<boolean>(false)
+
   return (
     <header className="header">
       <div className="container">
@@ -50,7 +54,7 @@ export default function Header(): JSX.Element {
         </div>
         <div className="header__nav-inner">
           <nav className="header__header-nav">
-            <div className="header-nav__dropdown header-nav__dropdown--closed">
+            <div className={`header-nav__dropdown ${dropdownToggle ? 'header-nav__dropdown--opened': 'header-nav__dropdown--closed'}`}>
               <ul className="header-nav__product-menu product-menu">
                 <li className="product-menu__item">
                   <Link className="product-menu__link" href="/catalog/clothing">Одежда</Link>
@@ -62,7 +66,7 @@ export default function Header(): JSX.Element {
                   <Link className="product-menu__link" href="/catalog/accessories">Аксессуары</Link>
                 </li>
               </ul>
-              <button className="product-menu__button" type="button">Каталог</button>
+              <button className="product-menu__button" type="button" onClick={() => setDropdownToggle(!dropdownToggle)}>Каталог</button>
             </div>
             <ul className="header-nav__nav-menu nav-menu">
               <li className="nav-menu__item">

@@ -1,0 +1,28 @@
+$primaryColor: rgba(60, 47, 34, 0.2);
+$activeColor: #8c4219;
+$hoverColor: #120044;
+$activeHover: #4e372a;
+$backgroundColor: #ffffff;
+
+.slider-button {
+	width: 38px;
+	height: 38px;
+	padding: 0;
+	background-color: $backgroundColor;
+	border: 1px solid $primaryColor;
+	border-radius: 50%;
+
+	&:hover .slider-button__icon path {
+		stroke: $hoverColor;
+		stroke-opacity: 1;
+	}
+
+	&--active .slider-button__icon path {
+		stroke: #8c4219;
+		stroke-opacity: 1;
+
+		&:hover .slider-button__icon path  {
+			stroke: $activeHover;
+		}
+	}
+}

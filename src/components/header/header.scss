@@ -5,7 +5,8 @@ $toggleButtonColor: #8b48cf;
 
 
 .header {
-  background: linear-gradient($firstGradientColor 19%, $secondGradientColor 19%);
+  margin-bottom: 40px;
+  background: linear-gradient($firstGradientColor 55%, $secondGradientColor 55%);
 }
 
 .header__site-inner {
@@ -26,8 +27,11 @@ $toggleButtonColor: #8b48cf;
 .header-contacts {
   display: flex;
   justify-content: space-between;
-  width: 62%;
   list-style-type: none;
+}
+
+.header-contacts__item {
+  margin-right: 20px;
 }
 
 .header-contacts__address {
@@ -73,6 +77,7 @@ $toggleButtonColor: #8b48cf;
 .user-menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   list-style-type: none;
   width: 22%;
 }
@@ -144,12 +149,16 @@ $toggleButtonColor: #8b48cf;
 
 .product-menu {
   position: absolute;
-  top: 40px;
+  top: 76px;
   left: 0;
-  display: none;
+  padding: 10px 15px 0 15px;
   flex-direction: column;
   list-style-type: none;
-  background-color: #f5f2f8;
+  background-color: #ffffff;
+}
+
+.product-menu__item {
+  margin-bottom: 15px;
 }
 
 .product-menu__link {
@@ -188,6 +197,10 @@ $toggleButtonColor: #8b48cf;
     }
   }
 
+  &--closed .product-menu {
+    display: none;
+  }
+
   &--opened .product-menu__button {
     &::after, &::before {
       position: absolute;
@@ -208,7 +221,7 @@ $toggleButtonColor: #8b48cf;
     }
   }
 
-  &:hover .product-menu {
+  &--opened .product-menu {
     display: flex;
   }
 }

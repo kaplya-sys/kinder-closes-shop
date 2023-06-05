@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.pagination-item {
+    display: flex;
+	margin-right: 13px;
+
+	&:last-child() {
+		margin-right: 0;
+	}
+
+	&--active .pagination-button {
+		background-color: #8b48cf;
+	}
+}
+
+.pagination-button {
+	width: 63px;
+	height: 3px;
+	padding: 0;
+	background-color: #f5f2f8;
+	border: none;
+	border-radius: 50px;
+}

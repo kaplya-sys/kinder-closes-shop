@@ -32,38 +32,37 @@ const products = [
 
 const promoList = [
   {
-    title: 'Черная пятница на всю коллекцию!<br /><span className="promotions__addition">позволь себе больше</span>',
+    id: 1,
+    title: ['Черная пятница на всю коллекцию!', <br />, <span className="promo__addition">позволь себе больше</span>],
     imgPath: '/banner/banner-1.jpg',
-    imgAlt: 'Малыш сидя на белом ковре, прикусил ложку. А вокруг него детские игрушки.',
   },
   {
+    id: 2,
     title: 'Оставьте заявку сегодня и получите скидку завтра!',
     imgPath: '/banner/banner-2.jpg',
-    imgAlt: 'Двое подростков, мальчик и девочка, в прыжке.',
   },
   {
+    id: 3,
     title: 'Черная пятница на всю коллекцию!',
     imgPath: '/banner/banner-3.jpg',
-    imgAlt: 'Малыш в белом костюме с рожками.',
   },
   {
-    title: 'Черная пятница на всю коллекцию!',
+    id: 4,
+    title: 'Оставьте заявку сегодня и получите скидку завтра!',
     imgPath: '/banner/banner-4.jpg',
-    imgAlt: 'Малыш сидит на стуле и целует грудничка в щеку.',
-    cn: ''
   }
 ]
 
 export default function Home() {
   return (
     <div className="container">
-      <Promotions promoData={promoList} />
+      <Promotions promoData={promoList} cn='' />
       <Adventures />
       <Category />
       <Products products={products} />
       <section className="" style={{position: 'relative'}}>
         <h2 className=""></h2>
-        <PromoCard {...promoList[3]} />
+        <PromoCard promoData={{...promoList[3]}} cn='promo--single' />
       </section>
     </div>
   )

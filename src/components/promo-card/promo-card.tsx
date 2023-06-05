@@ -1,19 +1,21 @@
 import './promo-card.scss'
-import Image from 'next/image'
 import Link from 'next/link'
 
 type PromoPropsType = {
-  title: string
-  imgPath: string
-  imgAlt: string
+  promoData: {
+    id: number
+    title: string | Array<string |  JSX.Element>
+    imgPath: string
+  }
   cn?: string
 }
 
-export default function PromoCard({title, imgPath, imgAlt, cn}: PromoPropsType): JSX.Element {
+export default function PromoCard({promoData, cn}: PromoPropsType): JSX.Element {
+  const {title, imgPath} = promoData
   return (
-    <div className={`promo promo--active promo--single ${cn}`} style={{backgroundImage: `url("/banner/banner-4.jpg")`}}>
+    <div className={`promo promo--active ${cn}`} style={{backgroundImage: `url(${imgPath})`}}>
       <div className="promo__content-wrapper">
-        <h2 className="promo__title">{title}</h2>
+        <h3 className="promo__title">{title}</h3>
         <Link className="promo__link" href="">Смотреть</Link>
       </div>
     </div>

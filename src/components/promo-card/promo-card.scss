@@ -1,6 +1,13 @@
+$linkColor: #8b48cf;
+$secondaryColor: #ffffff;
+
 .promo {
+	position: relative;
 	display: none;
 	height: 304px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 1;
 
 	&--active {
 		display: block;
@@ -14,17 +21,22 @@
 		height: 100%;
 		background-image: url("/banner/mask-1.png");
 		background-repeat: no-repeat;
-		z-index: 1;
+		z-index: -1;
 		content: "";
 	}
 
   &--single {
     height: 255px;
+
     &::before {
 			width: 708px;
       background-image: url("/banner/mask-2.png");
     }
   }
+
+	&--single .promo__content-wrapper {
+		width: 54%;
+	}
 }
 
 .promo__content-wrapper {
@@ -43,7 +55,11 @@
 	font-weight: 700;
 	font-size: 30px;
 	line-height: 150%;
-	color: #ffffff;
+	color: $secondaryColor;
+}
+
+.promo__addition {
+	font-size: 20px;
 }
 
 .promo__link {
@@ -53,14 +69,7 @@
 	font-size: 12px;
 	line-height: 13px;
 	text-decoration: none;
-	color: #8b48cf;
-	background-color: #ffffff;
+	color: $linkColor;
+	background-color: $secondaryColor;
 	border-radius: 3px;
-}
-
-.promo__image {
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: -2;
 }

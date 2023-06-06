@@ -18,7 +18,7 @@ type ProductsPropsType = {
 export default function Products({products}: ProductsPropsType): JSX.Element {
   return (
     <section className="products">
-      <h2 className="products__title">Недавно просмотренное</h2>
+      <h2 className="products__title">Популярные товары</h2>
       <ul className="products__list">
         {products.map(item => <ProductCard key={item.id} productCard={item} />)}
       </ul>

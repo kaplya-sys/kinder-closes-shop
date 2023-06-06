@@ -60,7 +60,7 @@ export default function Home() {
       <Adventures />
       <Category />
       <Products products={products} />
-      <section className="" style={{position: 'relative'}}>
+      <section className="promo" style={{position: 'relative'}}>
         <h2 className=""></h2>
         <PromoCard promoData={{...promoList[3]}} cn='promo--single' />
       </section>

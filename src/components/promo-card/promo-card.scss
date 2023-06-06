@@ -3,15 +3,10 @@ $secondaryColor: #ffffff;
 
 .promo {
 	position: relative;
-	display: none;
 	height: 304px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 1;
-
-	&--active {
-		display: block;
-	}
 
 	&::before {
 		position: absolute;
@@ -35,7 +30,7 @@ $secondaryColor: #ffffff;
   }
 
 	&--single .promo__content-wrapper {
-		width: 54%;
+		width: 56%;
 	}
 }
 

@@ -1,12 +1,12 @@
 .pagination {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 
 .pagination-item {
-    display: flex;
+	display: flex;
 	margin-right: 13px;
 
 	&:last-child() {
@@ -25,4 +25,5 @@
 	background-color: #f5f2f8;
 	border: none;
 	border-radius: 50px;
+	cursor: pointer;
 }

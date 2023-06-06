@@ -11,6 +11,8 @@ $backgroundColor: #ffffff;
 	background-color: $backgroundColor;
 	border: 1px solid $primaryColor;
 	border-radius: 50%;
+	z-index: 1;
+	cursor: pointer;
 
 	&:hover .slider-button__icon path {
 		stroke: $hoverColor;

@@ -1,15 +1,7 @@
-import './products.scss'
 import ProductCard from '../product-card/product-card'
 import SliderButton from '../slider-button/slider-button'
-
-type ProductType = {
-  id: number
-  title: string
-  price: number
-  oldPrice?: number
-  imagePath: string
-  sale: boolean
-}
+import {ProductType} from '@/types/product'
+import './products.scss'
 
 type ProductsPropsType = {
   products: ProductType[]

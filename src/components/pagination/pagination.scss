@@ -1,3 +1,6 @@
+$backgroundColor: #f5f2f8;
+$activeBackgroundColor: #8b48cf;
+
 .pagination {
 	display: flex;
 	margin: 0;
@@ -5,7 +8,7 @@
 	list-style-type: none;
 }
 
-.pagination-item {
+.pagination__item {
 	display: flex;
 	margin-right: 13px;
 
@@ -13,16 +16,16 @@
 		margin-right: 0;
 	}
 
-	&--active .pagination-button {
-		background-color: #8b48cf;
+	&--active .pagination__button {
+		background-color: $activeBackgroundColor;
 	}
 }
 
-.pagination-button {
+.pagination__button {
 	width: 63px;
 	height: 3px;
 	padding: 0;
-	background-color: #f5f2f8;
+	background-color: $backgroundColor;
 	border: none;
 	border-radius: 50px;
 	cursor: pointer;

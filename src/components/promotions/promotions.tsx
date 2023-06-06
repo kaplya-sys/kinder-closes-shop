@@ -1,60 +1,48 @@
 "use client"
 
-import './promotions.scss'
+import {useCallback, useState, MouseEvent} from 'react'
 import SliderButton from '../slider-button/slider-button'
 import PromoCard from '../promo-card/promo-card'
-import {useCallback, useState} from 'react'
-
-type Promo = {
-	id: number
-	title: string | Array<string | JSX.Element>
-	imgPath: string
-}
+import Pagination from '../pagination/pagination'
+import {Promo} from '@/types/product'
+import './promotions.scss'
 
 type PromotionsPropsType = {
-	promoData: Promo[]
-	cn?: string
+	promoData: Array<Promo>
 }
 
-export default function Promotions({ promoData, cn }: PromotionsPropsType): JSX.Element {
+export default function Promotions({promoData}: PromotionsPropsType): JSX.Element {
 	const [index, setIndex] = useState<number>(1)
-	const handlerNextSlide = useCallback(() => {
+	const nextSlideHandler = useCallback((): void => {
 		index === promoData.length? setIndex(1): setIndex(index + 1)
 	}, [index])
-	const handlerPrevSlide = useCallback(() => {
+	const prevSlideHandler = useCallback((): void => {
 		index === 1? setIndex(promoData.length): setIndex(index - 1)
 	}, [index])
-
-	const currentSlide: Promo[] = promoData.filter(item => item.id === index)
+	const onClickHandler = useCallback((e: MouseEvent): void => {
+		const evt = e.target as HTMLButtonElement
+		setIndex(Number(evt.name))
+	}, [])
+	const currentSlide: Array<Promo> = promoData.filter(item => item.id === index)
 
 	return (
 		<section className="promotions">
 			<div className="promotions__list">
 				{
-					currentSlide.map(item => <PromoCard key={item.id} promoData={{...item}} cn='promotions__item' />)
+					currentSlide.map((item) => <PromoCard promoData={{...item}} cn='promotions__item' key={item.id} />)
 				}
 			</div>
 			<SliderButton
 				label='Предыдущий слайд'
 				cn='promotions__slider-button promotions__slider-button--prev'
-				handlerSwitchSlide={handlerPrevSlide}
+				handlerSwitchSlide={prevSlideHandler}
 			/>
 			<SliderButton
 				label='Следующий слайд'
 				cn='promotions__slider-button promotions__slider-button--next'
-				handlerSwitchSlide={handlerNextSlide}
+				handlerSwitchSlide={nextSlideHandler}
 			/>
-			<ol className="promotions__pagination">
-				{
-					promoData.map(item => (
-						<li key={item.id} className={`promotions__pagination-item ${item.id === index? 'promotions__pagination-item--active': ''}`}>
-							<button className="promotions__pagination-button" type="button" name={String(item.id)} onClick={(e: React.MouseEvent<HTMLButtonElement>) => setIndex(Number(e.target.name))}>
-								<span className="visually-hidden">{item.id} слайд</span>
-							</button>
-						</li>
-					))
-				}
-			</ol>
+			<Pagination elementList={promoData} onClick={onClickHandler} cn="promotions__pagination" index={index} />
 		</section>
 	)
 }

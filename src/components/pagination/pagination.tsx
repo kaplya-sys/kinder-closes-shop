@@ -17,7 +17,7 @@ export default function Pagination({elementList, onClick, index, cn}: Pagination
 			{elementList.map(({id}) => (
 				<li className={`pagination__item ${id === index? 'pagination__item--active': ''}`} key={id}>
 					<button className="pagination__button" onClick={(e) => onClick(e)} name={String(id)}>
-						<span className="visually-hidden">{id} список</span>
+						<span className="visually-hidden">{id}</span>
 					</button>
 				</li>
 			))}

@@ -3,7 +3,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	min-height: 498px;
 	margin-bottom: 130px;
+	overflow: hidden;
 }
 
 .products__title {
@@ -16,12 +18,14 @@
 }
 
 .products__list {
+	width: 81.5%;
 	margin: 0;
 	padding: 0;
-	display: grid;
-	grid-template-columns: repeat(3, 300px);
+	display: flex;
 	column-gap: 20px;
 	list-style-type: none;
+	overflow: hidden;
+	scroll-behavior: smooth;
 }
 
 .products__slider-button {

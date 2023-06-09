@@ -1,0 +1,113 @@
+.our-contacts {
+  margin-bottom: 140px;
+}
+
+.our-contacts__title {
+  margin-bottom: 30px;
+}
+
+.our-contacts__wrapper {
+  display: grid;
+  grid-template-columns: auto 656px;
+  column-gap: 20px;
+}
+
+.our-contacts__market-info {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #faf9f8;
+  border-radius: 5px;
+}
+
+.our-contacts__address-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 30px;
+  padding: 50px 13px 50px 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.our-contacts__address {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: #120044;
+}
+
+.our-contacts__schedule {
+  display: grid;
+  grid-template-columns: 20px 10px auto 25px auto;
+}
+
+.our-contacts__schedule-title {
+  margin: 0;
+  margin-bottom: 22px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #120044;
+  grid-column: 1 / -1;
+}
+
+.our-contacts__schedule-icon {
+  grid-column: 1 / 2;
+  margin-bottom: 11px;
+}
+
+.our-contacts__schedule-days,
+.our-contacts__schedule-time {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #120044;
+  opacity: 0.7;
+}
+
+.our-contacts__schedule-days {
+  grid-column: 3 / 4;
+}
+
+.our-contacts__schedule-time {
+  grid-column: 5 / 6;
+}
+
+.our-contacts__phone {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: none;
+  color: rgba(18, 0, 68, 0.7);
+}
+
+.our-contacts__phone-icon {
+  margin-right: 10px;
+
+  & path {
+    fill: #120044;
+  }
+}
+
+.our-contacts__link {
+  align-self: center;
+  padding: 10px 25px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 13px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #8b48cf;
+  border-radius: 3px;
+}
+
+.our-contacts__location {
+  border: none;
+}

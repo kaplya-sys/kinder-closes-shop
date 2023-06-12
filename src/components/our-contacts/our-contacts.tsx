@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Watch from 'public/watch.svg'
 import Phone from 'public/phone.svg'
+import Title from '../ui/title/title'
 import './our-contacts.scss'
-import Title from '../title/title'
 
 export default function OurContacts(): JSX.Element {
   return (

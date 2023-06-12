@@ -1,8 +1,8 @@
 "use client"
 
-import {useCallback, MouseEvent, useMemo} from 'react'
-import {useSwitchSlide} from '../hooks/useSwitchSlide'
-import SliderButton from '../slider-button/slider-button'
+import {useMemo} from 'react'
+import {useSwitchSlide} from '../../hooks/useSwitchSlide'
+import SliderButton from '../ui/slider-button/slider-button'
 import PromoCard from '../promo-card/promo-card'
 import Pagination from '../pagination/pagination'
 import {Promo} from '@/types/product'
@@ -21,21 +21,24 @@ export default function Promotions({promoData}: PromotionsPropsType): JSX.Elemen
 
 	return (
 		<section className="promotions">
+			<h2 className="visually-hidden">Промоакции</h2>
 			<div className="promotions__list">
 				{
-					currentSlide.map((item) => <PromoCard promoData={{...item}} cn='promotions__item' key={item.id} />)
+					currentSlide.map((item) => <PromoCard key={item.id} promoData={{...item}} cn='promotions__item' />)
 				}
 			</div>
 			<SliderButton
-				label='Предыдущий слайд'
 				cn='promotions__slider-button promotions__slider-button--prev'
 				handlerSwitchSlide={prevSlideHandler}
-			/>
+			>
+				Предыдущий слайд
+			</SliderButton>
 			<SliderButton
-				label='Следующий слайд'
 				cn='promotions__slider-button promotions__slider-button--next'
 				handlerSwitchSlide={nextSlideHandler}
-			/>
+			>
+				Следующий слайд
+			</SliderButton>
 			<Pagination elementList={promoData} onClick={onClickHandler} index={index} />
 		</section>
 	)

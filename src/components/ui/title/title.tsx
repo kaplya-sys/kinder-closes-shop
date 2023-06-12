@@ -8,6 +8,6 @@ type TitlePropsType = {
 
 export default function Title({cn, children}: TitlePropsType): JSX.Element {
   return (
-    <h1 className={`${cn} title`}>{children}</h1>
+    <h2 className={`${cn} title`}>{children}</h2>
   )
 }

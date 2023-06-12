@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import Title from '../title/title'
+import Title from '../ui/title/title'
 import './category.scss'
 
 export default function Category() {
   return (
     <section className="category">
-      <Title cn="category__title" title="Поиск по категориям" />
+      <Title cn="category__title">Поиск по категориям</Title>
       <div className="category__slider-wrapper">
         <button className="category__slider-button category__slider-button--prev">
           <span className="visually-hidden">Предыдущая категория</span>

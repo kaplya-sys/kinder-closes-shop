@@ -1,14 +1,16 @@
-"use client"
+//"use client"
 
-import {useState} from 'react'
+//import { useState } from 'react'
+import { GetStaticProps, Metadata } from 'next'
+import Layout from '@/components/layout/layout'
 import Promotions from '@/components/promotions/promotions'
 import Adventures from '@/components/adventures/adventures'
 import Products from '@/components/products/products'
 import Category from '@/components/category/category'
-import PromoCard from '@/components/promo-card/promo-card'
+import PromoAction from '@/components/promo-action/promo-action'
 import OurContacts from '@/components/our-contacts/our-contacts'
-import {ProductType} from '@/types/product'
-import './page.scss'
+import { ProductType } from '@/types/product'
+import './home.scss'
 
 const products = [
   {
@@ -52,7 +54,7 @@ const products = [
   },
   {
     id: 6,
-    title: 'Ласты «искупнись»',
+    title: 'Ласты «искупайся»',
     price: 1800,
     oldPrice: 2000,
     imagePath: '/clothes/clothes-10.jpg',
@@ -83,21 +85,42 @@ const promoList = [
   }
 ]
 
-export default function Home() {
-  const [recentProducts, SetRecentProducts] = useState<Array<ProductType>>([])
+export const metadata: Metadata = {
+  title: 'Главная',
+  description: 'Главная страница',
+}
 
+type HomePropsType = {
+  data: Array<ProductType>
+}
+
+export default function Home({ data }: HomePropsType): JSX.Element {
+  //const [recentProducts, SetRecentProducts] = useState<Array<ProductType>>([])
+  console.log('cl: ',data)
+  const recentProducts:Array<ProductType> = []
   return (
-    <div className="container">
-      <Promotions promoData={promoList} />
-      <Adventures />
-      <Category />
-      <Products products={products} title='Популярные товары' />
-      <section className="">
-        <h2 className=""></h2>
-        <PromoCard promoData={{...promoList[3]}} cn='promo--single' />
-      </section>
-      <Products products={recentProducts} title='Недавно просмотренное' />
-      <OurContacts />
-    </div>
+    <Layout>
+      <main className="main">
+        <div className="container">
+          <h1 className="visually-hidden">Добро пожаловать интернет-магазина Мерри</h1>
+          <Promotions promoData={promoList} />
+          <Adventures />
+          <Category />
+          <Products products={products} title='Популярные товары' />
+          <PromoAction promo={{ ...promoList[3] }} />
+          <Products products={recentProducts} title='Недавно просмотренное' />
+          <OurContacts />
+        </div>
+      </main>
+    </Layout>
   )
+}
+
+export const getStaticProps = async () => {
+  const res = await fetch('http://localhost:5000/products')
+  const data = await res.json()
+  return {
+    props: data,
+    revalidate: 60
+  }
 }

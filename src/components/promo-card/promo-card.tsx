@@ -1,12 +1,9 @@
-import './promo-card.scss'
 import Link from 'next/link'
+import { Promo } from '@/types/product'
+import './promo-card.scss'
 
 type PromoPropsType = {
-  promoData: {
-    id: number
-    title: string | Array<string |  JSX.Element>
-    imgPath: string
-  }
+  promoData: Promo
   cn?: string
 }
 

@@ -1,8 +1,9 @@
 "use client"
 
-import {useCarousel} from '../hooks/useCarousel'
+import {useCarousel} from '../../hooks/useCarousel'
 import ProductCard from '../product-card/product-card'
-import SliderButton from '../slider-button/slider-button'
+import SliderButton from '../ui/slider-button/slider-button'
+import Title from '../ui/title/title'
 import {ProductType} from '@/types/product'
 import './products.scss'
 
@@ -16,20 +17,22 @@ export default function Products({products, title}: ProductsPropsType): JSX.Elem
 
   return (
     <section className="products">
-      <h2 className="products__title">{title}</h2>
+      <Title cn="products__title">{title}</Title>
       <ul className="products__list" ref={carousel}>
         {products.map(item => <ProductCard key={item.id} productCard={item} />)}
       </ul>
       <SliderButton
-        label='Предыдущий товар'
         cn='products__slider-button products__slider-button--prev'
         handlerSwitchSlide={backwardHandler}
-      />
+      >
+        Предыдущий товар
+      </SliderButton>
       <SliderButton
-        label='Следующий товар'
         cn='products__slider-button products__slider-button--next'
         handlerSwitchSlide={forwardHandler}
-      />
+      >
+        Следующий товар
+      </SliderButton>
     </section>
   )
 }

@@ -1,9 +1,10 @@
 "use client"
+
+import {useState} from 'react'
 import Link from 'next/link'
 import Logo from '../logo/logo'
 import Image from 'next/image'
 import './header.scss'
-import {useState} from 'react'
 
 export default function Header(): JSX.Element {
   const [dropdownToggle, setDropdownToggle] = useState<boolean>(false)
@@ -45,7 +46,7 @@ export default function Header(): JSX.Element {
               </Link>
             </li>
             <li className="user-menu__item">
-              <Link className="user-menu__link" href="/profile">
+              <Link className="user-menu__link" href="/auth/sing-in">
                 <Image className="user-menu__icon" src="/user.svg" priority width={20} height={20} alt="Пользователь." />
                 Войти
               </Link>

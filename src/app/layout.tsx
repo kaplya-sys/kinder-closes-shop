@@ -1,7 +1,7 @@
-import Header from '@/components/header/header'
-import './globals.scss'
+import {ReactNode} from 'react'
+import Head from 'next/head'
 import {Comfortaa} from 'next/font/google'
-import Footer from '@/components/footer/footer'
+import './globals.scss'
 
 const comfortaa = Comfortaa(
   {
@@ -12,19 +12,16 @@ const comfortaa = Comfortaa(
   }
 )
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({children}: {children: ReactNode}) {
   return (
     <html className="page" lang="ru">
+      <Head>
+        <meta charSet="utf-8" />
+        <meta name="robot" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <body className={`page__page-body page-body ${comfortaa.className}`}>
-        <Header />
-        <main className="page-body__main main">
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   )

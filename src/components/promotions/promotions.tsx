@@ -5,7 +5,7 @@ import {useSwitchSlide} from '../../hooks/useSwitchSlide'
 import SliderButton from '../ui/slider-button/slider-button'
 import PromoCard from '../promo-card/promo-card'
 import Pagination from '../pagination/pagination'
-import {PromoType} from '@/types/product'
+import {PromoType} from '@/types/product-type'
 import './promotions.scss'
 
 type PromotionsPropsType = {

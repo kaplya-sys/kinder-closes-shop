@@ -6,7 +6,7 @@ import Products from '@/components/products/products'
 import Category from '@/components/category/category'
 import PromoAction from '@/components/promo-action/promo-action'
 import OurContacts from '@/components/our-contacts/our-contacts'
-import {ProductType} from '@/types/product'
+import {ProductType} from '@/types/product-type'
 import {getProducts, getPromotions} from '@/services/products-service'
 import './home.scss'
 

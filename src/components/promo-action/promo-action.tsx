@@ -1,4 +1,4 @@
-import { PromoType } from '@/types/product'
+import { PromoType } from '@/types/product-type'
 import PromoCard from '../promo-card/promo-card'
 import './promo-action.scss'
 

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { PromoType } from '@/types/product'
+import { PromoType } from '@/types/product-type'
 import './promo-card.scss'
 
 type PromoPropsType = {

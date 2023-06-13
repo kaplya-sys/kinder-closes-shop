@@ -1,8 +1,9 @@
-import {AuthDataType, AuthUserResponseDataType, RegisterDataType} from "@/types/product"
+import { API_URL } from "@/constants/constants"
+import { AuthDataType, AuthUserResponseDataType, RegisterDataType } from "@/types/product-type"
 
 export const authorization = async (data: AuthDataType) => {
   try {
-    const res = await fetch('/auth/sing-in', {
+    const res = await fetch(`${API_URL}/auth/sing-in`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -20,7 +21,7 @@ export const authorization = async (data: AuthDataType) => {
 
 export const registration = async (data: RegisterDataType) => {
   try {
-    const res = await fetch('/auth/sing-up', {
+    const res = await fetch(`${API_URL}/auth/sing-up`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

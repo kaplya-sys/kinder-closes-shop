@@ -1,11 +1,11 @@
 "use client"
 
 import {MouseEvent} from 'react'
-import {Promo} from '@/types/product'
+import {PromoType} from '@/types/product'
 import './pagination.scss'
 
 type PaginationPropsType = {
-	elementList: Array<Promo>
+	elementList: Array<PromoType>
 	onClick: (e: MouseEvent) => void
 	index?: number
 	cn?: string

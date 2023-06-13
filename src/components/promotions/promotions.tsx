@@ -5,26 +5,25 @@ import {useSwitchSlide} from '../../hooks/useSwitchSlide'
 import SliderButton from '../ui/slider-button/slider-button'
 import PromoCard from '../promo-card/promo-card'
 import Pagination from '../pagination/pagination'
-import {Promo} from '@/types/product'
+import {PromoType} from '@/types/product'
 import './promotions.scss'
 
 type PromotionsPropsType = {
-	promoData: Array<Promo>
+	promotions: Array<PromoType>
 }
 
-export default function Promotions({promoData}: PromotionsPropsType): JSX.Element {
-	const {index, prevSlideHandler, nextSlideHandler, onClickHandler} = useSwitchSlide(promoData.length)
-
-	const currentSlide: Array<Promo> = useMemo(() => {
-		return promoData.filter(item => item.id === index)
-	},[promoData, index])
+export default function Promotions({promotions}: PromotionsPropsType): JSX.Element {
+	const {index, prevSlideHandler, nextSlideHandler, onClickHandler} = useSwitchSlide(promotions.length)
+	const currentSlide: Array<PromoType> = useMemo(() => {
+		return promotions.filter(item => item.id === index)
+	},[promotions, index])
 
 	return (
 		<section className="promotions">
 			<h2 className="visually-hidden">Промоакции</h2>
 			<div className="promotions__list">
 				{
-					currentSlide.map((item) => <PromoCard key={item.id} promoData={{...item}} cn='promotions__item' />)
+					currentSlide.map((item) => <PromoCard key={item.id} promo={{...item}} cn='promotions__item' />)
 				}
 			</div>
 			<SliderButton
@@ -39,7 +38,7 @@ export default function Promotions({promoData}: PromotionsPropsType): JSX.Elemen
 			>
 				Следующий слайд
 			</SliderButton>
-			<Pagination elementList={promoData} onClick={onClickHandler} index={index} />
+			<Pagination elementList={promotions} onClick={onClickHandler} index={index} />
 		</section>
 	)
 }

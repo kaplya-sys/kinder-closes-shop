@@ -49,26 +49,26 @@
     }
   ],
 
-  "promoList": [
+  "promotions": [
     {
       "id": 1,
-      "title": ["Черная пятница на всю коллекцию!", "<br />", "<span className='promo__addition'>позволь себе больше</span>"],
-      "imgPath": "/banner/banner-1.jpg"
+      "title": "Черная пятница на всю коллекцию! позволь себе больше",
+      "imagePath": "/banner/banner-1.jpg"
     },
     {
       "id": 2,
       "title": "Оставьте заявку сегодня и получите скидку завтра!",
-      "imgPath": "/banner/banner-2.jpg"
+      "imagePath": "/banner/banner-2.jpg"
     },
     {
       "id": 3,
       "title": "Черная пятница на всю коллекцию!",
-      "imgPath": "/banner/banner-3.jpg"
+      "imagePath": "/banner/banner-3.jpg"
     },
     {
       "id": 4,
       "title": "Оставьте заявку сегодня и получите скидку завтра!",
-      "imgPath": "/banner/banner-4.jpg"
+      "imagePath": "/banner/banner-4.jpg"
     }
   ]
 }

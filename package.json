@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "json-server --watch db.json --port 5000",
-    "ps": "concurrently \"dev\" \"server\""
+    "server": "json-server --watch db.json --port 4200",
+    "ps": "concurrently npm:dev npm:server"
   },
   "dependencies": {
     "@types/node": "20.2.5",

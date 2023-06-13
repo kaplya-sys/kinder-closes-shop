@@ -1,14 +1,27 @@
-export type ProductType = {
-  id: number
-  title: string
+export interface PromoType {
+	id: number
+	title: string
+	imagePath: string
+}
+
+export interface ProductType extends PromoType {
   price: number
   oldPrice?: number
-  imagePath: string
   sale: boolean
 }
 
-export type Promo = {
-	id: number
-	title: string | Array<string | JSX.Element>
-	imgPath: string
+export interface AuthDataType {
+  email: string
+  password: string
+}
+
+export interface AuthUserResponseDataType {
+  userToken: string
+  user: {
+    name: string
+  }
+}
+
+export interface RegisterDataType extends AuthDataType {
+  name: string
 }

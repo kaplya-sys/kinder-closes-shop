@@ -31,7 +31,7 @@ export default function Category() {
       </div>
       <ul className="category__list" ref={carousel}>
         <li className="category__item">
-          <Image className="category__image" src="/clothes/clothes-1.jpg" width={215} height={244} alt="" />
+          <Image className="category__image" src="/clothes/clothes-1.png" width={215} height={244} alt="" />
           <div className="category__content">
             <h3 className="category__subtitle">Новинки</h3>
             <button className="category__button">
@@ -40,7 +40,7 @@ export default function Category() {
           </div>
         </li>
         <li className="category__item">
-          <Image className="category__image" src="/clothes/clothes-2.jpg" width={215} height={244} alt="" />
+          <Image className="category__image" src="/clothes/clothes-2.png" width={215} height={244} alt="" />
           <div className="category__content">
             <h3 className="category__subtitle">Акции</h3>
             <button className="category__button">
@@ -49,7 +49,7 @@ export default function Category() {
           </div>
         </li>
         <li className="category__item">
-          <Image className="category__image" src="/clothes/clothes-3.jpg" width={215} height={244} alt="" />
+          <Image className="category__image" src="/clothes/clothes-3.png" width={215} height={244} alt="" />
           <div className="category__content">
             <h3 className="category__subtitle">Шапки</h3>
             <button className="category__button">
@@ -58,7 +58,7 @@ export default function Category() {
           </div>
         </li>
         <li className="category__item">
-          <Image className="category__image" src="/clothes/clothes-4.jpg" width={215} height={244} alt="" />
+          <Image className="category__image" src="/clothes/clothes-4.png" width={215} height={244} alt="" />
           <div className="category__content">
             <h3 className="category__subtitle">Купальники</h3>
             <button className="category__button">

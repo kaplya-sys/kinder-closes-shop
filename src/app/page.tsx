@@ -6,19 +6,18 @@ import Products from '@/components/products/products'
 import Category from '@/components/category/category'
 import PromoAction from '@/components/promo-action/promo-action'
 import OurContacts from '@/components/our-contacts/our-contacts'
-import {ProductType} from '@/types/product-type'
-import {getProducts, getPromotions} from '@/services/products-service'
+import RecentProducts from '@/components/recent-products/recent-products'
+import {getProducts, getPromotions} from '@/services/productsService'
 import './home.scss'
 
 export const metadata: Metadata = {
-  title: 'Главная',
+  title: 'Главная | Мерри',
   description: 'Главная страница',
 }
 
 export default async function Home(): Promise<JSX.Element> { 
   const products = await getProducts()
   const promotions = await getPromotions()
-  const recentProducts: Array<ProductType> = []
 
   return (
     <Layout>
@@ -30,7 +29,7 @@ export default async function Home(): Promise<JSX.Element> {
           <Category />
           {products && <Products products={products} title='Популярные товары' />}
           {promotions && <PromoAction promo={{...promotions[3]}} />}
-          {recentProducts && <Products products={recentProducts} title='Недавно просмотренное' />}
+          <RecentProducts />
           <OurContacts />
         </div>
       </main>

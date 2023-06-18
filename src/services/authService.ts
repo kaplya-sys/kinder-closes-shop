@@ -1,5 +1,6 @@
 import { API_URL } from "@/constants/constants"
-import { AuthDataType, AuthUserResponseDataType, RegisterDataType } from "@/types/product-type"
+import { AuthDataType, AuthUserResponseDataType, RegisterDataType } from "@/types/userType"
+
 
 export const authorization = async (data: AuthDataType) => {
   try {

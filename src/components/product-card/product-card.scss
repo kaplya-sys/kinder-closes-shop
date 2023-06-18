@@ -8,7 +8,7 @@ $labelBackgroundColor: #f9ba4f;
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	min-width: 300px;
+	max-width: 300px;
 	padding: 15px;
 	background-color: $secondaryColor;
 
@@ -36,6 +36,12 @@ $labelBackgroundColor: #f9ba4f;
 		border-radius: 3px;
 		content: "sale";
 	}
+}
+
+.card__link {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
 }
 
 .card__subtitle {

@@ -1,7 +1,7 @@
 "use client"
 
 import {MouseEvent} from 'react'
-import {PromoType} from '@/types/product-type'
+import {PromoType} from '@/types/productType'
 import './pagination.scss'
 
 type PaginationPropsType = {

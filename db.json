@@ -28,7 +28,7 @@
       "title": "Футболка «мамина дочка»",
       "price": 600,
       "oldPrice": 650,
-      "imagePath": "/clothes/clothes-8.jpg",
+      "imagePath": "/clothes/clothes-8.png",
       "sale": true
     },
     {
@@ -36,7 +36,7 @@
       "title": "Рубашка «деловой парень»",
       "price": 800,
       "oldPrice": 1750,
-      "imagePath": "/clothes/clothes-9.jpg",
+      "imagePath": "/clothes/clothes-9.png",
       "sale": true
     },
     {
@@ -44,7 +44,7 @@
       "title": "Ласты «искупнись»",
       "price": 1800,
       "oldPrice": 2000,
-      "imagePath": "/clothes/clothes-10.jpg",
+      "imagePath": "/clothes/clothes-10.png",
       "sale": true
     }
   ],

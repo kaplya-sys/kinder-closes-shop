@@ -4,7 +4,7 @@ import {useCarousel} from '../../hooks/useCarousel'
 import ProductCard from '../product-card/product-card'
 import SliderButton from '../ui/slider-button/slider-button'
 import Title from '../ui/title/title'
-import {ProductType} from '@/types/product-type'
+import {ProductType} from '@/types/productType'
 import './products.scss'
 
 type ProductsPropsType = {

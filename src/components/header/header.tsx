@@ -1,13 +1,29 @@
 "use client"
 
-import {useState} from 'react'
+import {FormEvent, useState} from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '../logo/logo'
-import Image from 'next/image'
+import { useAppSelector } from '@/redux/hooks'
+import { getOrderPrice } from '@/utils/getOrderPrice'
+import { useLazySearchProductsQuery } from '@/redux/api/productsApi'
 import './header.scss'
 
 export default function Header(): JSX.Element {
   const [dropdownToggle, setDropdownToggle] = useState<boolean>(false)
+  const [searchValue, setSearchValue] = useState<string>('')
+  const {basket} = useAppSelector(state => state.products)
+  const [fetchProduct, {data}] = useLazySearchProductsQuery()
+
+  const onChangeHandler = (e: FormEvent) => {
+    const target = e.target as HTMLInputElement
+    setSearchValue(target.value)
+  }
+
+  const onClickHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    fetchProduct(searchValue)
+  }
 
   return (
     <header className="header">
@@ -38,10 +54,10 @@ export default function Header(): JSX.Element {
             <li className="user-menu__item">
               <Link className="user-menu__link" href="/profile/basket">
                 <Image className="user-menu__icon" src="/basket.svg" priority width={20} height={20} alt="Корзина." />
-                <div className="user-menu__count">2</div>
+                {!!basket.length && <div className="user-menu__count">{basket.length}</div>}
                 <div className="user-menu__price-wrapper">
                   <span className="user-menu__sum">Сумма заказа:</span> 
-                  <span className="user-menu__price">440 000 ₽</span>
+                  <span className="user-menu__price">{getOrderPrice(basket)} ₽</span>
                 </div>
               </Link>
             </li>
@@ -90,9 +106,14 @@ export default function Header(): JSX.Element {
               </li>
             </ul>
           </nav>
-          <form className="header__form-search form-search">
+          <form className="header__form-search form-search" onClick={onClickHandler}>
             <label className="form-search__label">
-              <input className="form-search__field" type="text" placeholder="Искать товар на сайте" />
+              <input
+                className="form-search__field"
+                type="text" value={searchValue} 
+                placeholder="Искать товар на сайте"
+                onChange={onChangeHandler}
+              />
             </label>
             <button className="form-search__button" type="submit">Найти</button>
           </form>

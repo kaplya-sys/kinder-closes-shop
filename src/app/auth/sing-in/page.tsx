@@ -4,10 +4,12 @@ import { FormEvent, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Validation from '@/components/validation/validation'
 import Input from '@/components/ui/input/input'
+import { useLazyUserAuthQuery } from '@/redux/api/userApi'
 
 export default function SingIn(): JSX.Element {
   const [values, setValues] = useState<{ email: string, password: string }>({ email: '', password: '' })
   const router = useRouter()
+  const [authFetch, { data }] = useLazyUserAuthQuery()
 
   const onChangeHandler = (e: FormEvent) => {
     const target = e.target as HTMLInputElement
@@ -16,6 +18,7 @@ export default function SingIn(): JSX.Element {
 
   const onSubmitHandler = (e: FormEvent) => {
     e.preventDefault()
+    authFetch(values)
     router.push('/')
   }
 
@@ -24,34 +27,36 @@ export default function SingIn(): JSX.Element {
   }, [])
 
   return (
-    <Validation
-      title="Авторизация"
-      onSubmitHandler={onSubmitHandler}
-      buttonTitle="Войти"
-      text="Ещё не зарегистрированы?"
-      linkText="Зарегистрироваться"
-      linkHref="/auth/sing-up"
-    >
-      <Input
-        cn="validation__input"
-        type="email"
-        name="email"
-        value={values.email}
-        placeholder="Email"
-        onChange={onChangeHandler}
+    <main className="main">
+      <Validation
+        title="Авторизация"
+        onSubmitHandler={onSubmitHandler}
+        buttonTitle="Войти"
+        text="Ещё не зарегистрированы?"
+        linkText="Зарегистрироваться"
+        linkHref="/auth/sing-up"
       >
-        Электронная почта
-      </Input>
-      <Input
-        cn="validation__input validation__input--password"
-        type="password"
-        name="password"
-        value={values.password}
-        placeholder="Password"
-        onChange={onChangeHandler}
-      >
-        Пароль
-      </Input>
-    </Validation>
+        <Input
+          cn="validation__input"
+          type="email"
+          name="email"
+          value={values.email}
+          placeholder="Email"
+          onChange={onChangeHandler}
+        >
+          Электронная почта
+        </Input>
+        <Input
+          cn="validation__input validation__input--password"
+          type="password"
+          name="password"
+          value={values.password}
+          placeholder="Password"
+          onChange={onChangeHandler}
+        >
+          Пароль
+        </Input>
+      </Validation>
+    </main>
   )
 }

@@ -1,13 +1,15 @@
-import {ReactNode} from 'react'
+import { ReactNode } from 'react'
 import Header from '../header/header'
 import Footer from '../footer/footer'
+import './layout.scss'
 
-
-export default function Layout({children}: {children: ReactNode}): JSX.Element {
+export default function Layout({ children }: { children: ReactNode }): JSX.Element {
   return (
     <>
       <Header />
-        {children}  
+      <main className="main">
+        {children}
+      </main>
       <Footer />
     </>
   )

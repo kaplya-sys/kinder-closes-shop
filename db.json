@@ -70,5 +70,82 @@
       "title": "Оставьте заявку сегодня и получите скидку завтра!",
       "imagePath": "/banner/banner-4.jpg"
     }
+  ],
+  "menuList": [
+    {
+      "id": 1,
+      "title": "Акции",
+      "pathRef": "/services/promo"
+    },
+    {
+      "id": 2,
+      "title": "Сертификаты",
+      "pathRef": "/services/certificates"
+    },
+    {
+      "id": 3,
+      "title": "Доставка и оплата",
+      "pathRef": "/services/delivery"
+    },
+    {
+      "id": 4,
+      "title": "Фотогалерея",
+      "pathRef": "/services/photo-gallery"
+    },
+    {
+      "id": 5,
+      "title": "О компании",
+      "pathRef": "/services/about-us"
+    },
+    {
+      "id": 6,
+      "title": "Контакты",
+      "pathRef": "/services/contacts"
+    }
+  ]
+  ,
+  "categoryList": [
+    {
+      "id": 1,
+      "title": "Одежда",
+      "pathRef": "/catalog/clothing"
+    },
+    {
+      "id": 2,
+      "title": "Обувь",
+      "pathRef": "/catalog/shoes"
+    },
+    {
+      "id": 3,
+      "title": "Аксессуары",
+      "pathRef": "/catalog/accessories"
+    }
+  ]
+  ,
+  "adventuresList": [
+    {
+      "id": 1,
+      "title": "Уникальный дизайн",
+      "imagePath": "/advantages/advantages-1.svg",
+      "imageAlt": "Кисточка и краски."
+    },
+    {
+      "id": 2,
+      "title": "Быстрая доставка",
+      "imagePath": "/advantages/advantages-2.svg",
+      "imageAlt": "Часики и грузовик."
+    },
+    {
+      "id": 3,
+      "title": "Товар сертифицирован",
+      "imagePath": "/advantages/advantages-3.svg",
+      "imageAlt": "Знак качества."
+    },
+    {
+      "id": 4,
+      "title": "Работаем по России и СНГ",
+      "imagePath": "/advantages/advantages-4.svg",
+      "imageAlt": "Глобус."
+    }
   ]
 }

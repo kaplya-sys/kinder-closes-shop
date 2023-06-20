@@ -1,3 +1,9 @@
+import Layout from '@/components/layout/layout'
+
 export default function Certificates(): JSX.Element {
-  return <h1 className="title">Сертификаты</h1>
+  return (
+    <Layout>
+      <h1 className="title">Сертификаты</h1>
+    </Layout>
+  )
 }

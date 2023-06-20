@@ -1,0 +1,53 @@
+$primaryColor: #120044;
+$secondaryColor: #ffffff;
+
+.user-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  width: 22%;
+}
+
+.user-menu__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 13px;
+  color: $primaryColor;
+  text-decoration: none;
+}
+
+.user-menu__icon {
+  display: block;
+  margin-right: 10px;
+}
+
+.user-menu__count {
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13px;
+  height: 13px;
+  font-weight: 700;
+  font-size: 9px;
+  line-height: 10px;
+  color: $secondaryColor;
+  border-radius: 50%;
+  background-color: $primaryColor;
+}
+
+.user-menu__price-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-menu__sum {
+  font-weight: 400;
+  margin-bottom: 4px;
+}

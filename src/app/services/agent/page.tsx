@@ -1,3 +1,9 @@
+import Layout from '@/components/layout/layout'
+
 export default function Agent(): JSX.Element {
-  return <h1 className="title">Представителям</h1>
+  return (
+    <Layout>
+      <h1 className="title">Представителям</h1>
+    </Layout>
+  )
 }

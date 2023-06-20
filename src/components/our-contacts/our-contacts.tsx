@@ -38,7 +38,7 @@ export default function OurContacts(): JSX.Element {
           height="585"
           allowFullScreen
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+          referrerPolicy="strict-origin-when-cross-origin"
           title="Расположение магазина «Мерри»."
         >
         </iframe>

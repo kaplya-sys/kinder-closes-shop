@@ -3,6 +3,7 @@
 import { FormEvent, useState } from 'react'
 import Validation from '@/components/validation/validation'
 import Input from '@/components/ui/input/input'
+import { useLazyUserRegisterQuery } from '@/redux/api/userApi'
 
 type ValuesType = {
   name: string
@@ -19,6 +20,8 @@ export default function SingUp(): JSX.Element {
     repeatPassword: ''
   })
 
+  const [registerFetch, { data }] = useLazyUserRegisterQuery()
+
   const onChangeHandler = (e: FormEvent) => {
     const target = e.target as HTMLInputElement
     setValues({ ...values, [target.name]: target.value })
@@ -26,57 +29,60 @@ export default function SingUp(): JSX.Element {
 
   const onSubmitHandler = (e: FormEvent) => {
     e.preventDefault()
+    registerFetch(values)
   }
-
+  console.log(data)
   return (
-    <Validation
-      title="Регистрация"
-      onSubmitHandler={onSubmitHandler}
-      buttonTitle="Зарегистрироваться"
-      text="Уже зарегистрированы?"
-      linkText="Войти"
-      linkHref="/auth/sing-in"
-    >
-      <Input
-        cn="validation__input"
-        type="text"
-        name="name"
-        value={values.name}
-        placeholder="Логин"
-        onChange={onChangeHandler}
+    <main className="main">
+      <Validation
+        title="Регистрация"
+        onSubmitHandler={onSubmitHandler}
+        buttonTitle="Зарегистрироваться"
+        text="Уже зарегистрированы?"
+        linkText="Войти"
+        linkHref="/auth/sing-in"
       >
-        Имя пользователя
-      </Input>
-      <Input
-        cn="validation__input"
-        type="email"
-        name="email"
-        value={values.email}
-        placeholder="Email"
-        onChange={onChangeHandler}
-      >
-        Электронная почта
-      </Input>
-      <Input
-        cn="validation__input"
-        type="password"
-        name="password"
-        value={values.password}
-        placeholder="Пароль"
-        onChange={onChangeHandler}
-      >
-        Пароль
-      </Input>
-      <Input
-        cn="validation__input validation__input--repeat-password"
-        type="password"
-        name="repeatPassword"
-        value={values.repeatPassword}
-        placeholder="Повторите пароль"
-        onChange={onChangeHandler}
-      >
-        Пароль еще раз
-      </Input>
-    </Validation>
+        <Input
+          cn="validation__input"
+          type="text"
+          name="name"
+          value={values.name}
+          placeholder="Логин"
+          onChange={onChangeHandler}
+        >
+          Имя пользователя
+        </Input>
+        <Input
+          cn="validation__input"
+          type="email"
+          name="email"
+          value={values.email}
+          placeholder="Email"
+          onChange={onChangeHandler}
+        >
+          Электронная почта
+        </Input>
+        <Input
+          cn="validation__input"
+          type="password"
+          name="password"
+          value={values.password}
+          placeholder="Пароль"
+          onChange={onChangeHandler}
+        >
+          Пароль
+        </Input>
+        <Input
+          cn="validation__input validation__input--repeat-password"
+          type="password"
+          name="repeatPassword"
+          value={values.repeatPassword}
+          placeholder="Повторите пароль"
+          onChange={onChangeHandler}
+        >
+          Пароль еще раз
+        </Input>
+      </Validation>
+    </main>
   )
 }

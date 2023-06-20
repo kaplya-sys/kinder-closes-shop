@@ -1,3 +1,9 @@
+import Layout from '@/components/layout/layout'
+
 export default function Profile(): JSX.Element {
-	return <h1 className="title">Профиль</h1>
+	return (
+		<Layout>
+			<h1 className="title">Профиль</h1>
+		</Layout>
+	)
 }

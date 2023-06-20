@@ -1,8 +1,8 @@
+import { Metadata } from 'next'
+import Link from 'next/link'
 import Layout from '@/components/layout/layout'
 import { getProductByID } from '@/services/productsService'
 import { ProductType } from '@/types/productType'
-import { Metadata } from 'next'
-import Link from 'next/link'
 
 type ProductPropsType = {
 	params: {
@@ -38,7 +38,7 @@ export default async function Product({ params }: ProductPropsType): Promise<JSX
 				</ul>
 			</div>
 			<h1 className="title">{product.title}</h1>
-			<section className="ptoduct">
+			<section className="product">
 				
 			</section>
 		</Layout>

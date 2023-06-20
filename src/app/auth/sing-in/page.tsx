@@ -27,36 +27,34 @@ export default function SingIn(): JSX.Element {
   }, [])
 
   return (
-    <main className="main">
-      <Validation
-        title="Авторизация"
-        onSubmitHandler={onSubmitHandler}
-        buttonTitle="Войти"
-        text="Ещё не зарегистрированы?"
-        linkText="Зарегистрироваться"
-        linkHref="/auth/sing-up"
+    <Validation
+      title="Авторизация"
+      onSubmitHandler={onSubmitHandler}
+      buttonTitle="Войти"
+      text="Ещё не зарегистрированы?"
+      linkText="Зарегистрироваться"
+      linkHref="/auth/sing-up"
+    >
+      <Input
+        cn="validation__input"
+        type="email"
+        name="email"
+        value={values.email}
+        placeholder="Email"
+        onChange={onChangeHandler}
       >
-        <Input
-          cn="validation__input"
-          type="email"
-          name="email"
-          value={values.email}
-          placeholder="Email"
-          onChange={onChangeHandler}
-        >
-          Электронная почта
-        </Input>
-        <Input
-          cn="validation__input validation__input--password"
-          type="password"
-          name="password"
-          value={values.password}
-          placeholder="Password"
-          onChange={onChangeHandler}
-        >
-          Пароль
-        </Input>
-      </Validation>
-    </main>
+        Электронная почта
+      </Input>
+      <Input
+        cn="validation__input validation__input--password"
+        type="password"
+        name="password"
+        value={values.password}
+        placeholder="Password"
+        onChange={onChangeHandler}
+      >
+        Пароль
+      </Input>
+    </Validation>
   )
 }

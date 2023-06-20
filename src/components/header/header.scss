@@ -1,8 +1,5 @@
 $firstGradientColor: #f5f2f8;
 $secondGradientColor: #ffffff;
-$textColor: #120044;
-$toggleButtonColor: #8b48cf;
-
 
 .header {
   margin-bottom: 40px;
@@ -22,56 +19,6 @@ $toggleButtonColor: #8b48cf;
 .header__header-contacts {
   margin: 0;
   padding: 0;
-}
-
-.header-contacts {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-}
-
-.header-contacts__item {
-  margin-right: 20px;
-}
-
-.header-contacts__address {
-  display: flex;
-  align-items: center;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 13px;
-  color: $textColor;
-}
-
-.header-contacts__schedule {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 13px;
-  color: $textColor;
-}
-
-.header-contacts__link {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 13px;
-  color: $textColor;
-  text-decoration: none;
-
-  &:hover {
-    opacity: 0.7;
-  }
-}
-
-.header-contacts__icon {
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
 }
 
 .header__user-menu {
